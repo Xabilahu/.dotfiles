@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/tmux new -d -s 'General' \; neww \; select-window -t 1 \; split-window -h \; select-window -t 0
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Tmux Session
+Comment=Setup the General Tmux session

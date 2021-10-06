@@ -1,0 +1,11 @@
+[user]
+	name = Xabier Lahuerta Vázquez
+	email = xabilahu99@hotmail.com
+	signingkey = B168C6617F8ADAC2
+[init]
+	defaultBranch = master
+[commit]
+	gpgsign = true
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
