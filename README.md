@@ -4,9 +4,9 @@ This repo contains a collection of configuration files and installation scripts 
 
 ## Usage 
 
-Dotfiles are managed using [GNU Stow](https://www.gnu.org/software/stow/), this way config files are stored once, and then are symlinked to necessary directories inside `$HOME`{:.bash .highlight} folder.
+Dotfiles are managed using [GNU Stow](https://www.gnu.org/software/stow/), this way config files are stored once, and then are symlinked to necessary directories inside `$HOME` folder.
 
-To do so, this repo needs to be cloned in `$HOME`{:.bash .highlight}. In order to create the symlinks, just run:
+To do so, this repo needs to be cloned in `$HOME`. In order to create the symlinks, just run:
 
 ```bash
 $ stow <FOLDER>
