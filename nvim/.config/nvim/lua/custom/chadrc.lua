@@ -22,6 +22,10 @@ M.ui = {
 
 -- NvChad included plugin options & overrides
 M.plugins = {
+   status = {
+      dashboard = true,
+      telescope_media = true,
+   },
    options = {
       nvimtree = {
          auto_close = true,
