@@ -1,0 +1,18 @@
+#!/bin/bash
+
+        source $SCRIPTING_UTILS
+
+if [[ -z "$STOW_FOLDERS" ]]
+then
+    log_msg "ERROR" "\$STOW_FOLDERS environment variable unset."
+    exit 1
+fi
+
+for folder in $STOW_FOLDERS
+do
+    log_msg "INFO" "Stowing $folder."
+    stow -D $folder
+    stow $folder
+done
+
+exit 0

@@ -3,6 +3,30 @@
 
 local hooks = require "core.hooks"
 
+vim.g.diagnostics_visible = true
+
+function _G.toggle_diagnostics()
+  if vim.g.diagnostics_visible then
+    vim.g.diagnostics_visible = false
+    vim.lsp.diagnostic.clear(0)
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+    print('Diagnostics are hidden')
+  else
+    vim.g.diagnostics_visible = true
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = true,
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+      }
+    )
+    print('Diagnostics are visible')
+  end
+end
+
+vim.api.nvim_buf_set_keymap(0, 'n', '<Space>tt', ':call v:lua.toggle_diagnostics()<CR>', {silent=true, noremap=true})
+
 -- NOTE: To use this, make a copy with `cp example_init.lua init.lua`
 
 --------------------------------------------------------------------
@@ -25,7 +49,10 @@ hooks.add("setup_mappings", function(map)
    map("n", "<leader>bd", ":Bdelete <CR>", opt);
    map("n", "<leader>bw", ":Bwipeout <CR>", opt);
    map("n", "<leader>q", ":silent! :NvimTreeClose <CR>:q <CR>", opt);
+   map("n", "<leader>qq", ":silent! :NvimTreeClose <CR>: q! <CR>", opt);
    map("n", "<leader>wq", ":silent! :NvimTreeClose <CR>:wq <CR>", opt);
+   map("n", "<leader>lp", ":LspStop <CR>", opt);
+   map("n", "<leader>ls", ":LspStart <CR>", opt);
    map("n", "<leader>7", ":CommentToggle <CR>", opt);
    map("v", "<leader>7", ":CommentToggle <CR>", opt);
    map("n", "<leader>m", ":Telescope marks <CR>", opt);
@@ -53,6 +80,15 @@ hooks.add("install_plugins", function(use)
              vim.cmd [[ do User LspAttachBuffers ]]
           end)
        end,
+    }
+    use {
+      'sudormrfbin/cheatsheet.nvim',
+
+      requires = {
+        {'nvim-telescope/telescope.nvim'},
+        {'nvim-lua/popup.nvim'},
+        {'nvim-lua/plenary.nvim'},
+      }
     }
 end)
 

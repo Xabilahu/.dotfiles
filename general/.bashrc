@@ -47,5 +47,16 @@ alias vim='nvim'
 
 export GPG_TTY=$(tty)
 export EDITOR='nvim'
+
+# JAVA stuff
+export JAVA_HOME="/usr/lib/jvm/default"
+
+# GOLANG stuff
+export GO111MODULE=on
+
+# Own env-vars
+export STOW_FOLDERS="general alacritty nvim spotify tmux xournalpp"
+export SCRIPTING_UTILS="$HOME/.dotfiles/utils.sh"
+
 export PATH=$HOME/.local/bin:$PATH
 export PROMPT_COMMAND=set_bash_prompt

@@ -14,6 +14,10 @@ M.options, M.ui, M.mappings, M.plugins = {}, {}, {}, {}
 M.options = {
    relativenumber = true,
    mouse = "",
+   tabstop = 4,
+   expandtab = true,
+   shiftwidth = 4,
+   smarttab = 4,
 }
 
 M.ui = {
