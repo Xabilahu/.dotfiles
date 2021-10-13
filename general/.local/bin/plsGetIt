@@ -10,17 +10,17 @@ source $SCRIPTING_UTILS
 
 log_msg "INPUT" "Input Passphrase: "
 read -s readPwd
-echo ""
+
 p=$(echo $readPwd | python3 -c "import sys, hashlib; print(hashlib.sha256(sys.stdin.readline().strip().encode()).hexdigest())")
 dPwd=$(echo $p | gpg -d --quiet --batch --yes --passphrase-fd 0 $HOME/.local/secrets/master_password.gpg 2> /dev/null)
 
 if [[ $? -eq 0 ]]
 then
-    log_msg "INFO" "Password successfully decrypted."
+    log_msg "INFO" "Password successfully decrypted." "SAME-LINE"
     echo $dPwd | xclip -sel clip
     on_success &
     exit 0
 else
-    log_msg "ERROR" "Incorrect passphrase."
+    log_msg "ERROR" "Incorrect passphrase." "SAME-LINE"
     exit 1
 fi
