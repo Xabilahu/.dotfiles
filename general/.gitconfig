@@ -1,7 +1,7 @@
 [user]
 	name = Xabier Lahuerta Vázquez
 	email = xabilahu99@hotmail.com
-	signingkey = B168C6617F8ADAC2
+	signingkey = D07A7B38C698FC88A09500FFAE0136ADFD79039E
 [init]
 	defaultBranch = master
 [commit]
