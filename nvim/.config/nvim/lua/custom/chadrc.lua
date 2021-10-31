@@ -12,16 +12,19 @@ M.options, M.ui, M.mappings, M.plugins = {}, {}, {}, {}
 -- examples of setting relative number & changing theme:
 
 M.options = {
-   relativenumber = true,
-   mouse = "",
-   tabstop = 4,
-   expandtab = true,
-   shiftwidth = 4,
-   smarttab = 4,
+  expandtab = true,
+  shiftwidth = 4,
+  smartindent = true,
+  ignorecase = false,
+  mouse = "",
+  number = true,
+  relativenumber = true,
+  tabstop = 4,
+  mapleader = " ",
 }
 
 M.ui = {
-   theme = "chadracula"
+   theme = "tomorrow-night"
 }
 
 -- NvChad included plugin options & overrides
