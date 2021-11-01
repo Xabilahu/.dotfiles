@@ -66,6 +66,13 @@ vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", {noremap = true});
 -- vim.api.nvim_set_keymap("n", "<leader>j", ":m .+1<CR>==", {noremap = true});
 -- vim.api.nvim_set_keymap("n", "<leader>k", ":m .-2<CR>==", {noremap = true});
 
+-- Toggle LSP Diagnostics
+vim.api.nvim_buf_set_keymap(0, 'n', '<Space>tt', ':call v:lua.toggle_diagnostics()<CR>', {silent=true, noremap=true})
+
+-- Autocmds
+vim.cmd [[ autocmd BufNewFile,BufRead *.c,*.h,*.cpp,*.hpp setlocal shiftwidth=2 tabstop=2 ]]
+vim.cmd [[ autocmd BufWritePost * silent! Neoformat ]]
+
 -- NOTE: To use this, make a copy with `cp example_init.lua init.lua`
 
 --------------------------------------------------------------------
@@ -94,10 +101,8 @@ hooks.add("setup_mappings", function(map)
    map("v", "<leader>7", ":CommentToggle <CR>", opt);
    map("n", "<leader>m", ":Telescope marks <CR>", opt);
    map("n", "<leader>u", ":PackerUpdate <CR>", opt);
+   map("n", "<leader>fm", ":Neoformat <CR>", opt);
 end)
-
--- Toggle LSP Diagnostics
-vim.api.nvim_buf_set_keymap(0, 'n', '<Space>tt', ':call v:lua.toggle_diagnostics()<CR>', {silent=true, noremap=true})
 
 -- To add new plugins, use the "install_plugin" hook,
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
@@ -118,6 +123,7 @@ hooks.add("install_plugins", function(use)
           end)
        end,
     }
+    use 'sbdchd/neoformat'
 end)
 
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
