@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/protonvpn-cli c -f
+Exec=/opt/miniconda3/bin/protonvpn-cli c -f
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
