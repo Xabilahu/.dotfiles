@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Activate miniconda
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh && conda activate
-
 function set_bash_prompt () {
 	local status=$?
 	local COLOR_DIVIDER="\[\e[30;1m\]"
@@ -60,3 +57,6 @@ export SCRIPTING_UTILS="$HOME/.dotfiles/utils.sh"
 
 export PATH=$HOME/.local/bin:$PATH
 export PROMPT_COMMAND=set_bash_prompt
+
+# Activate miniconda
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh && conda activate

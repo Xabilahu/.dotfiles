@@ -509,7 +509,7 @@ schemes:
 # *solarized-dark
 # *tomorrow-night
 
-colors: *tomorrow-night
+colors: *dracula
 
 # Bell
 #

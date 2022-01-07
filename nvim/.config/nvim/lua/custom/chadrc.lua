@@ -24,7 +24,7 @@ M.options = {
 }
 
 M.ui = {
-   theme = "tomorrow-night"
+   theme = "chadracula"
 }
 
 -- NvChad included plugin options & overrides
