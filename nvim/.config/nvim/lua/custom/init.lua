@@ -76,4 +76,10 @@ customPlugins.add(function(use)
        end,
     }
     use 'sbdchd/neoformat'
+    use {
+        'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
+        config = function()
+            require'toggle_lsp_diagnostics'.init({ underline = false })
+        end,
+    }
 end)
