@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=gaudible
+Type=Application
+Exec=/home/xabi/.local/bin/gaudible.py --sound "geary:/home/xabi/.local/share/sounds/email-alert.wav" --sound "/home/xabi/.local/share/sounds/to-the-point.ogg"
+Hidden=false
+NoDisplay=false
+Terminal=false
+X-GNOME-Autostart-enabled=true
